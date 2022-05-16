@@ -1,0 +1,48 @@
+﻿@model IEnumerable<EBoutique.Models.Produit>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h2>Liste des Produits</h2>
+
+    <button class="btn btn-success mb-1 pull-right" type="button">
+        @Html.ActionLink("Create New", "Create", null, new { @class = "classnameLink" })
+    </button>
+</div>
+<table class="table table-bordered table-striped table-condensed cf mt-1">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomProduit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescriptionProduit)
+        </th>
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomProduit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomImage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescriptionProduit)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdProduit }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdProduit }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdProduit })
+        </td>
+    </tr>
+}
+
+</table>
