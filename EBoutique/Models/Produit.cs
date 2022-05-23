@@ -28,5 +28,10 @@ namespace EBoutique.Models
         [Required(ErrorMessage = "*")]
         [Display(Name = "Description")]
         public string DescriptionProduit { get; set; }
+
+        public int? IdCategorie { get; set; }
+        [ForeignKey("IdCategorie")]
+
+        public virtual  Categorie Categorie { get; set; }
     }
 }

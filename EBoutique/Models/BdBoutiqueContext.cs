@@ -10,5 +10,7 @@ namespace EBoutique.Models
         }
 
         public DbSet<Produit> produits { get; set; }
+        public DbSet<Categorie> categories { get; set; }
+        public DbSet<Client> clients { get; set; }
     }
 }
